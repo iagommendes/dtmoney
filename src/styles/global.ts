@@ -1,0 +1,88 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+    :root {
+        --background: #f0f2f5;
+        --red: #e52e4d;
+        --blue: #5429cc;
+        --green: #33cc95;
+        --blue-light: #6933ff;
+        --text-light: #363f5f;
+        --text-body: #969cb3;
+        --background: #f0f2f5;
+        --shape: #FFFFFF;
+        --input-background: #e7e9ee;
+        --input-border: #d7d7d7;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    // font-size: 16px (tamanho padrão, muito bom para desktops)
+
+    html {
+        @media (min-width: 1080px) {
+            font-size: 93.75%; // 15px
+        }
+
+        @media (min-width: 720px) {
+            font-size: 87.5%; // 14px
+        }
+    }
+
+    // REM = 1rem = 16px
+
+    body {
+        background-color: var(--background);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body, input, textarea, button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+
+    h1, h2, h3, h4, h5, h6, strong {
+        font-weight: 600;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    [disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .react-modal-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .react-modal-content {
+        width: 100%;
+        max-width: 576px;
+        background: var(--background);
+        padding: 3rem;
+        border-radius: 0.24rem;
+        position: relative;
+    }
+
+    .react-modal-close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        border: 0;
+        background: transparent;
+    }
+`
